@@ -102,4 +102,7 @@ case 8: negative numbers
 >>> my_list.print_sorted()
 [-5, -1, 1, 5, 51]
 >>>
+<<<<<<< HEAD
 
+=======
+>>>>>>> a2ae9095f2ef9746452b956971eb1d61583546bd
