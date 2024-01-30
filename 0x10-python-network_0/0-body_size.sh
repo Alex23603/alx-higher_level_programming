@@ -10,5 +10,5 @@ fi
 url="$1"
 
 # Use curl to send a request, get the body size, and display it in bytes
-response_size=$(curl -s "$url" | wc -c)
+response_size=$(curl -sI "$url" | grep -i Content-Length | awk '{print $2}')
 echo "$response_size"
