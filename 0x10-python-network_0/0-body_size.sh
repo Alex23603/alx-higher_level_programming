@@ -9,6 +9,6 @@ fi
 # Get the URL from the command line argument
 url="$1"
 
-# Use curl to send a request and display the size of the response body in bytes
-response_size=$(curl -sI "$url" | grep -i Content-Length | awk '{print $2}')
-echo "Size of the response body: $response_size bytes"
+# Use curl to send a request, get the body size, and display it in bytes
+response_size=$(curl -s "$url" | wc -c)
+echo "$response_size"
