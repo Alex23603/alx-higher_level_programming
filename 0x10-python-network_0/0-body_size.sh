@@ -1,14 +1,3 @@
 #!/bin/bash
-
-# Check if a URL is provided as an argument
-if [ $# -eq 0 ]; then
-    echo "Usage: $0 <URL>"
-    exit 1
-fi
-
-# Get the URL from the command line argument
-url="$1"
-
-# Use curl to send a request, get the body size, and display it in bytes
-response_size=$(curl -sI "$url" | grep -i Content-Length | awk '{print $2}')
-echo "$response_size"
+# to get the byte size of the HTTP response header for the given URL
+curl -s "$1" | wc -c
